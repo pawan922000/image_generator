@@ -121,7 +121,9 @@ public class MainActivity extends AppCompatActivity {
         RequestBody requestBody= RequestBody.create(object.toString(),JSON);
         Request request= new Request.Builder().url("https://api.openai.com/v1/images/generations")
                 .header("Authorization",
-                        "Bearer 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")
+                        "Bearer "+"please go here https://platform.openai.com/account/api-keys" +
+                                "and generate your secret api keythen in just one double quotes with bearer" +
+                                "space paste the key")
                 .post(requestBody).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
