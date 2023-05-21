@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         JSONObject object= new JSONObject();
         try {
             object.put("prompt",text);
-            object.put("size","256x256");
+            object.put("size","512x512");
         } catch (JSONException e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -121,9 +121,7 @@ public class MainActivity extends AppCompatActivity {
         RequestBody requestBody= RequestBody.create(object.toString(),JSON);
         Request request= new Request.Builder().url("https://api.openai.com/v1/images/generations")
                 .header("Authorization",
-                        "Bearer "+"please go here https://platform.openai.com/account/api-keys" +
-                                "and generate your secret api keythen in just one double quotes with bearer" +
-                                "space paste the key")
+                        "Bearer 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")
                 .post(requestBody).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
